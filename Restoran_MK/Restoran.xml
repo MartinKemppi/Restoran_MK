@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<restoran>
+	<menu>
+		<!--Külmad suupisted-->
+		<toit>
+			<nimi>Gruusia juust</nimi>
+			<hind>7.9</hind>
+			<kategooria>Külmad suupisted</kategooria>
+		</toit>
+		<toit>
+			<nimi>Basturma</nimi>
+			<hind>8.90</hind>
+			<kategooria>Külmad suupisted</kategooria>
+		</toit>
+		<toit>
+			<nimi>Badrižani </nimi>
+			<hind>9.9</hind>
+			<kategooria>Külmad suupisted</kategooria>
+		</toit>
+
+		<!--Soojad suupisted-->
+		<toit>
+			<nimi>Juustupallid</nimi>
+			<hind>7.5</hind>
+			<kategooria>Soojad suupisted</kategooria>
+		</toit>
+		<toit>
+			<nimi>Praetud Gruusia juust</nimi>
+			<hind>9.9</hind>
+			<kategooria>Soojad suupisted</kategooria>
+		</toit>
+		<toit>
+			<nimi>Soko</nimi>
+			<hind>9.5</hind>
+			<kategooria>Soojad suupisted</kategooria>
+		</toit>
+
+		<!--Supid-->
+		<toit>
+			<nimi>Bozbaši</nimi>
+			<hind>10.9</hind>
+			<kategooria>Supid</kategooria>
+		</toit>
+		<toit>
+			<nimi>Hartšo Imeretini moodi</nimi>
+			<hind>11.9</hind>
+			<kategooria>Supid</kategooria>
+		</toit>
+		<toit>
+			<nimi>Katmis Supi</nimi>
+			<hind>9</hind>
+			<kategooria>Supid</kategooria>
+		</toit>
+
+		<!--Salatid-->
+		<toit>
+			<nimi>Talupoja salat</nimi>
+			<hind>7.5</hind>
+			<kategooria>Salatid</kategooria>
+		</toit>
+		<toit>
+			<nimi>Kolhuri </nimi>
+			<hind>8.5</hind>
+			<kategooria>Salatid</kategooria>
+		</toit>
+		<toit>
+			<nimi>Kalakuri</nimi>
+			<hind>7.5</hind>
+			<kategooria>Salatid</kategooria>
+		</toit>
+
+		<!--Pearoad-->
+		<toit>
+			<nimi>Tšahohbili</nimi>
+			<hind>11.5</hind>
+			<kategooria>Pearoad</kategooria>
+		</toit>
+		<toit>
+			<nimi>Tšašušuli</nimi>
+			<hind>12.5</hind>
+			<kategooria>Pearoad</kategooria>
+		</toit>
+		<toit>
+			<nimi>Tšakapuli</nimi>
+			<hind>13.9</hind>
+			<kategooria>Pearoad</kategooria>
+		</toit>
+
+		<!--Grill-->
+		<toit>
+			<nimi>Sealihašašlõkk</nimi>
+			<hind>12.5</hind>
+			<kategooria>Grill</kategooria>
+		</toit>
+		<toit>
+			<nimi>Kanašašlõkk</nimi>
+			<hind>12.5</hind>
+			<kategooria>Grill</kategooria>
+		</toit>
+		<toit>
+			<nimi>Prtebi</nimi>
+			<hind>8.9</hind>
+			<kategooria>Grill</kategooria>
+		</toit>
+
+		<!--Magustoidud-->
+		<toit>
+			<nimi>Apelsinitort</nimi>
+			<hind>6</hind>
+			<kategooria>Magustoidud</kategooria>
+		</toit>
+		<toit>
+			<nimi>Тort "Muinasjutt"</nimi>
+			<hind>6</hind>
+			<kategooria>Magustoidud</kategooria>
+		</toit>
+		<toit>
+			<nimi>Tort "Ideaal"</nimi>
+			<hind>6</hind>
+			<kategooria>Magustoidud</kategooria>
+		</toit>
+
+		<!--Garniirid-->
+		<toit>
+			<nimi>Friikartul</nimi>
+			<hind>6</hind>
+			<kategooria>Garniirid</kategooria>
+		</toit>
+		<toit>
+			<nimi>Ahjukartul</nimi>
+			<hind>6</hind>
+			<kategooria>Garniirid</kategooria>
+		</toit>
+		<toit>
+			<nimi>Kartulipuder</nimi>
+			<hind>6</hind>
+			<kategooria>Garniirid</kategooria>
+		</toit>
+
+		<!--Karastusjoogid-->
+		<jook>
+			<nimi>Tarhun</nimi>
+			<hind>3.5</hind>
+			<kategooria>Karastusjoogid</kategooria>
+		</jook>
+		<jook>
+			<nimi>Borjomi</nimi>
+			<hind>3.5</hind>
+			<kategooria>Karastusjoogid</kategooria>
+		</jook>
+		<jook>
+			<nimi>Coca-cola</nimi>
+			<hind>3</hind>
+			<kategooria>Karastusjoogid</kategooria>
+		</jook>
+		<jook>
+			<nimi>Tomati mahl</nimi>
+			<hind>3</hind>
+			<kategooria>Karastusjoogid</kategooria>
+		</jook>
+		<jook>
+			<nimi>Tee</nimi>
+			<hind>5</hind>
+			<kategooria>Karastusjoogid</kategooria>
+		</jook>
+		<jook>
+			<nimi>Kakao</nimi>
+			<hind>3</hind>
+			<kategooria>Karastusjoogid</kategooria>
+		</jook>
+	</menu>
+		<!--Lauad-->
+	<laud>
+		<number>1</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>A</asukoht>
+		<seisukord>Vaba</seisukord>
+	</laud>
+	<laud>
+		<number>2</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>A</asukoht>
+		<seisukord>Vaba</seisukord>
+	</laud>
+	<laud>
+		<number>3</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>A</asukoht>
+		<seisukord>Vaba</seisukord>
+	</laud>
+	<laud>
+		<number>4</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>A</asukoht>
+		<seisukord>Vaba</seisukord>
+	</laud>
+	<laud>
+		<number>5</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>A</asukoht>
+		<seisukord>Vaba</seisukord>
+	</laud>
+	<laud>
+		<number>6</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>A</asukoht>
+		<seisukord>Vaba</seisukord>
+	</laud>
+	<laud>
+		<number>7</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>A</asukoht>
+		<seisukord>Vaba</seisukord>
+	</laud>
+	<laud>
+		<number>8</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>A</asukoht>
+		<seisukord>Broneeritud</seisukord>
+	</laud>
+	<laud>
+		<number>1</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>B</asukoht>
+		<seisukord>Broneeritud</seisukord>
+	</laud>
+	<laud>
+		<number>2</number>
+		<mahutavus>4</mahutavus>
+		<asukoht>B</asukoht>
+		<seisukord>Vaba</seisukord>
+	</laud>
+		<!--Teenindajad-->
+	<teenindaja>
+		<nimi>Maria</nimi>
+		<tunnus>101</tunnus>
+	</teenindaja>
+	<teenindaja>
+		<nimi>Margus</nimi>
+		<tunnus>102</tunnus>
+	</teenindaja>
+	<teenindaja>
+		<nimi>Britta</nimi>
+		<tunnus>103</tunnus>
+	</teenindaja>
+	<teenindaja>
+		<nimi>Juhan</nimi>
+		<tunnus>104</tunnus>
+	</teenindaja>
+		<!--Tellimused-->
+	<tellimus>
+		<id>1</id>
+		<teenindaja>101</teenindaja>
+		<tellimusestaatus>Valmis</tellimusestaatus>
+	</tellimus>
+	<tellimus>
+		<id>2</id>
+		<teenindaja>102</teenindaja>
+		<tellimusestaatus>Ei ole valmis</tellimusestaatus>
+	</tellimus>
+	<tellimus>
+		<id>3</id>
+		<teenindaja>103</teenindaja>
+		<tellimusestaatus>Ei ole valmis</tellimusestaatus>
+	</tellimus>
+	<tellimus>
+		<id>4</id>
+		<teenindaja>104</teenindaja>
+		<tellimusestaatus>Ei ole valmis</tellimusestaatus>
+	</tellimus>
+</restoran>

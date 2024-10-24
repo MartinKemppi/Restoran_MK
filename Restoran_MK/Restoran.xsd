@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="restoran">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="menu">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="toit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="nimi" type="xs:string" />
+										<xs:element name="hind" type="xs:decimal" />
+										<xs:element name="kategooria" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" name="jook">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="nimi" type="xs:string" />
+										<xs:element name="hind" type="xs:decimal" />
+										<xs:element name="kategooria" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" name="laud">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="number" type="xs:unsignedByte" />
+							<xs:element name="mahutavus" type="xs:unsignedByte" />
+							<xs:element name="asukoht" type="xs:string" />
+							<xs:element name="seisukord" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" name="teenindaja">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nimi" type="xs:string" />
+							<xs:element name="tunnus" type="xs:unsignedByte" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="tellimus">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" />
+							<xs:element name="teenindaja" />
+							<xs:element name="tellimusestaatus" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
