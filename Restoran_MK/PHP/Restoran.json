@@ -1,0 +1,262 @@
+{
+  "restoran": {
+    "menu": {
+      "toit": [
+        {
+          "nimi": "Gruusia juust",
+          "hind": "7.9",
+          "kategooria": "Külmad suupisted"
+        },
+        {
+          "nimi": "Basturma",
+          "hind": "8.90",
+          "kategooria": "Külmad suupisted"
+        },
+        {
+          "nimi": "Badrižani",
+          "hind": "9.9",
+          "kategooria": "Külmad suupisted"
+        },
+        {
+          "nimi": "Juustupallid",
+          "hind": "7.5",
+          "kategooria": "Soojad suupisted"
+        },
+        {
+          "nimi": "Praetud Gruusia juust",
+          "hind": "9.9",
+          "kategooria": "Soojad suupisted"
+        },
+        {
+          "nimi": "Soko",
+          "hind": "9.5",
+          "kategooria": "Soojad suupisted"
+        },
+        {
+          "nimi": "Bozbaši",
+          "hind": "10.9",
+          "kategooria": "Supid"
+        },
+        {
+          "nimi": "Hartšo Imeretini moodi",
+          "hind": "11.9",
+          "kategooria": "Supid"
+        },
+        {
+          "nimi": "Katmis Supi",
+          "hind": "9",
+          "kategooria": "Supid"
+        },
+        {
+          "nimi": "Talupoja salat",
+          "hind": "7.5",
+          "kategooria": "Salatid"
+        },
+        {
+          "nimi": "Kolhuri",
+          "hind": "8.5",
+          "kategooria": "Salatid"
+        },
+        {
+          "nimi": "Kalakuri",
+          "hind": "7.5",
+          "kategooria": "Salatid"
+        },
+        {
+          "nimi": "Tšahohbili",
+          "hind": "11.5",
+          "kategooria": "Pearoad"
+        },
+        {
+          "nimi": "Tšašušuli",
+          "hind": "12.5",
+          "kategooria": "Pearoad"
+        },
+        {
+          "nimi": "Tšakapuli",
+          "hind": "13.9",
+          "kategooria": "Pearoad"
+        },
+        {
+          "nimi": "Sealihašašlõkk",
+          "hind": "12.5",
+          "kategooria": "Grill"
+        },
+        {
+          "nimi": "Kanašašlõkk",
+          "hind": "12.5",
+          "kategooria": "Grill"
+        },
+        {
+          "nimi": "Prtebi",
+          "hind": "8.9",
+          "kategooria": "Grill"
+        },
+        {
+          "nimi": "Apelsinitort",
+          "hind": "6",
+          "kategooria": "Magustoidud"
+        },
+        {
+          "nimi": "Тort \"Muinasjutt\"",
+          "hind": "6",
+          "kategooria": "Magustoidud"
+        },
+        {
+          "nimi": "Tort \"Ideaal\"",
+          "hind": "6",
+          "kategooria": "Magustoidud"
+        },
+        {
+          "nimi": "Friikartul",
+          "hind": "6",
+          "kategooria": "Garniirid"
+        },
+        {
+          "nimi": "Ahjukartul",
+          "hind": "6",
+          "kategooria": "Garniirid"
+        },
+        {
+          "nimi": "Kartulipuder",
+          "hind": "6",
+          "kategooria": "Garniirid"
+        }
+      ],
+      "jook": [
+        {
+          "nimi": "Tarhun",
+          "hind": "3.5",
+          "kategooria": "Karastusjoogid"
+        },
+        {
+          "nimi": "Borjomi",
+          "hind": "3.5",
+          "kategooria": "Karastusjoogid"
+        },
+        {
+          "nimi": "Coca-cola",
+          "hind": "3",
+          "kategooria": "Karastusjoogid"
+        },
+        {
+          "nimi": "Tomati mahl",
+          "hind": "3",
+          "kategooria": "Karastusjoogid"
+        },
+        {
+          "nimi": "Tee",
+          "hind": "5",
+          "kategooria": "Karastusjoogid"
+        },
+        {
+          "nimi": "Kakao",
+          "hind": "3",
+          "kategooria": "Karastusjoogid"
+        }
+      ]
+    },
+    "laud": [
+      {
+        "number": "1",
+        "mahutavus": "4",
+        "asukoht": "A",
+        "seisukord": "Vaba"
+      },
+      {
+        "number": "2",
+        "mahutavus": "4",
+        "asukoht": "A",
+        "seisukord": "Vaba"
+      },
+      {
+        "number": "3",
+        "mahutavus": "4",
+        "asukoht": "A",
+        "seisukord": "Vaba"
+      },
+      {
+        "number": "4",
+        "mahutavus": "4",
+        "asukoht": "A",
+        "seisukord": "Vaba"
+      },
+      {
+        "number": "5",
+        "mahutavus": "4",
+        "asukoht": "A",
+        "seisukord": "Vaba"
+      },
+      {
+        "number": "6",
+        "mahutavus": "4",
+        "asukoht": "A",
+        "seisukord": "Vaba"
+      },
+      {
+        "number": "7",
+        "mahutavus": "4",
+        "asukoht": "A",
+        "seisukord": "Vaba"
+      },
+      {
+        "number": "8",
+        "mahutavus": "4",
+        "asukoht": "A",
+        "seisukord": "Broneeritud"
+      },
+      {
+        "number": "1",
+        "mahutavus": "4",
+        "asukoht": "B",
+        "seisukord": "Broneeritud"
+      },
+      {
+        "number": "2",
+        "mahutavus": "4",
+        "asukoht": "B",
+        "seisukord": "Vaba"
+      }
+    ],
+    "teenindaja": [
+      {
+        "nimi": "Maria",
+        "tunnus": "101"
+      },
+      {
+        "nimi": "Margus",
+        "tunnus": "102"
+      },
+      {
+        "nimi": "Britta",
+        "tunnus": "103"
+      },
+      {
+        "nimi": "Juhan",
+        "tunnus": "104"
+      }
+    ],
+    "tellimus": [
+      {
+        "id": "1",
+        "teenindaja": "101",
+        "tellimusestaatus": "Valmis"
+      },
+      {
+        "id": "2",
+        "teenindaja": "102",
+        "tellimusestaatus": "Ei ole valmis"
+      },
+      {
+        "id": "3",
+        "teenindaja": "103",
+        "tellimusestaatus": "Ei ole valmis"
+      },
+      {
+        "id": "4",
+        "teenindaja": "104",
+        "tellimusestaatus": "Ei ole valmis"
+      }
+    ]
+  }
+}
