@@ -16,86 +16,36 @@ $data = json_decode($json, true);
 <h1>Restoran</h1>
 <a href="andmed_xml.php">XML vorm</a>
 
-<h3>Toidud</h3>
+<h2>Tellimuste tabel</h2>
 <table border="1">
     <tr>
-        <th>Nimi</th>
-        <th>Hind</th>
-        <th>Kategooria</th>
+        <th>Tellimus ID</th>
+        <th>Teenindaja Nimi</th>
+        <th>Teenindaja Tunnus</th>
+        <th>Toit</th>
+        <th>Jook</th>
+        <th>Laud Number</th>
+        <th>Laud Mahutavus</th>
+        <th>Laud Asukoht</th>
+        <th>Laud Seisukord</th>
+        <th>Tellimuse Seisund</th>
     </tr>
-    <?php foreach ($data['restoran']['menu']['toit'] as $toit): ?>
-        <tr>
-            <td><?= htmlspecialchars($toit['nimi']) ?></td>
-            <td><?= htmlspecialchars($toit['hind']) ?></td>
-            <td><?= htmlspecialchars($toit['kategooria']) ?></td>
-        </tr>
-    <?php endforeach; ?>
-</table>
-
-<h3>Joogid</h3>
-<table border="1">
-    <tr>
-        <th>Nimi</th>
-        <th>Hind</th>
-        <th>Kategooria</th>
-    </tr>
-    <?php foreach ($data['restoran']['menu']['jook'] as $jook): ?>
-        <tr>
-            <td><?= htmlspecialchars($jook['nimi']) ?></td>
-            <td><?= htmlspecialchars($jook['hind']) ?></td>
-            <td><?= htmlspecialchars($jook['kategooria']) ?></td>
-        </tr>
-    <?php endforeach; ?>
-</table>
-
-<h2>Lauad</h2>
-<table border="1">
-    <tr>
-        <th>Laua number</th>
-        <th>Mahutavus</th>
-        <th>Koht</th>
-        <th>Seisukord</th>
-        <th>Sees/Väljas</th>
-    </tr>
-    <?php foreach ($data['restoran']['laud'] as $laud): ?>
-        <tr>
-            <td><?= htmlspecialchars($laud['number']) ?></td>
-            <td><?= htmlspecialchars($laud['mahutavus']) ?></td>
-            <td><?= htmlspecialchars($laud['asukoht']) ?></td>
-            <td><?= htmlspecialchars($laud['seisukord']) ?></td>
-            <td><?= htmlspecialchars($laud['asukoht'] === 'A' ? 'Sees' : 'Väljas') ?></td>
-        </tr>
-    <?php endforeach; ?>
-</table>
-
-<h2>Teenindajad</h2>
-<table border="1">
-    <tr>
-        <th>Teenindaja nimi</th>
-        <th>Teenindaja number</th>
-    </tr>
-    <?php foreach ($data['restoran']['teenindaja'] as $teenindaja): ?>
-        <tr>
-            <td><?= htmlspecialchars($teenindaja['nimi']) ?></td>
-            <td><?= htmlspecialchars($teenindaja['tunnus']) ?></td>
-        </tr>
-    <?php endforeach; ?>
-</table>
-
-<h2>Tellimused</h2>
-<table border="1">
-    <tr>
-        <th>Id</th>
-        <th>Teenindaja</th>
-        <th>Tellimusestaatus</th>
-    </tr>
-    <?php foreach ($data['restoran']['tellimus'] as $tellimus): ?>
-        <tr>
-            <td><?= htmlspecialchars($tellimus['id']) ?></td>
-            <td><?= htmlspecialchars($tellimus['teenindaja']) ?></td>
-            <td><?= htmlspecialchars($tellimus['tellimusestaatus']) ?></td>
-        </tr>
-    <?php endforeach; ?>
+    <?php
+    foreach ($data['restoran']['tellimus'] as $tellimus) {
+        echo "<tr>";
+        echo "<td>" . ($tellimus['tellimusId']) . "</td>";
+        echo "<td>" . ($tellimus['teenindaja']['nimi']) . "</td>";
+        echo "<td>" . ($tellimus['teenindaja']['tunnus']) . "</td>";
+        echo "<td>" . ($tellimus['menu']['toit']) . "</td>";
+        echo "<td>" . ($tellimus['menu']['jook']) . "</td>";
+        echo "<td>" . ($tellimus['laud']['number']) . "</td>";
+        echo "<td>" . ($tellimus['laud']['mahutavus']) . "</td>";
+        echo "<td>" . ($tellimus['laud']['asukoht']) . "</td>";
+        echo "<td>" . ($tellimus['laud']['seisukord']) . "</td>";
+        echo "<td>" . ($tellimus['tellimusestaatus']) . "</td>";
+        echo "</tr>";
+    }
+    ?>
 </table>
 
 </body>

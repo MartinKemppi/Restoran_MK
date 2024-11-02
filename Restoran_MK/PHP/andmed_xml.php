@@ -2,17 +2,17 @@
 <?php
 $xml = simplexml_load_file('Restoran.xml');
 
-$selected_kategooria = isset($_GET['kategooria']) ? $_GET['kategooria'] : '';
-
-$categories = [];
-foreach ($xml->menu->toit as $toit) {
-    $categories[] = (string)$toit->kategooria;
+//salvestame andmed massiivisse
+//tsükli läbi näitame kõik andmed seotud teenindaja nime järgi
+$teenindajad = [];
+foreach ($xml->tellimus as $tellimus) {
+    $teenindajad[(string)$tellimus->teenindaja->nimi] = (string)$tellimus->teenindaja->nimi;
 }
-$categories = array_unique($categories);
+
+//kontrollime, kas teenindaja on valitud
+$selectedTeenindaja = isset($_POST['teenindaja']) ? $_POST['teenindaja'] : '';
+
 ?>
-
-
-
 
 <!doctype html>
 <html lang="et">
@@ -27,178 +27,153 @@ $categories = array_unique($categories);
 <h1>Restoran</h1>
 <a href="andmed_json.php">JSON vorm</a>
 
+<h2>Tellimuste tabel</h2>
 <table border="1">
     <tr>
-        <th>Nimi</th>
-        <th>Hind</th>
-        <th>Kategooria</th>
+        <th>Tellimus ID</th>
+        <th>Teenindaja Nimi</th>
+        <th>Teenindaja Tunnus</th>
+        <th>Toit</th>
+        <th>Jook</th>
+        <th>Laua Number</th>
+        <th>Laua Mahutavus</th>
+        <th>Laua Asukoht</th>
+        <th>Laua Seisukord</th>
+        <th>Tellimuse Seisund</th>
     </tr>
     <?php
-    echo "<h2>Toidud:</h2>";
-    foreach ($xml->menu->toit as $toit) {
-        echo "<tr>";
-        echo "<td>" . $toit->nimi . "</td>";
-        echo "<td>" . $toit->hind . "</td>";
-        echo "<td>" . $toit->kategooria . "</td>";
-        echo "</tr>";
-    }
-    ?>
-</table>
-
-<table border="1">
-    <tr>
-        <th>Nimi</th>
-        <th>Hind</th>
-        <th>Kategooria</th>
-    </tr>
-    <?php
-    echo "<h2>Toidud:</h2>";
-    foreach ($xml->menu->jook as $jook) {
-        echo "<tr>";
-        echo "<td>" . $jook->nimi . "</td>";
-        echo "<td>" . $jook->hind . "</td>";
-        echo "<td>" . $jook->kategooria . "</td>";
-        echo "</tr>";
-    }
-    ?>
-</table>
-
-<table border="1">
-    <tr>
-        <th>Laua number</th>
-        <th>Mahutavus</th>
-        <th>Koht</th>
-        <th>Seisukord</th>
-    </tr>
-    <?php
-    echo "<h2>Lauad:</h2>";
-    foreach ($xml->laud as $laud) {
-        echo "<tr>";
-        echo "<td>" . $laud->number . "</td>";
-        echo "<td>" . $laud->mahutavus . "</td>";
-        echo "<td>" . $laud->asukoht . "</td>";
-        echo "<td>" . $laud->seisukord . "</td>";
-        echo "</tr>";
-    }
-    ?>
-</table>
-
-<table border="1">
-    <tr>
-        <th>Teenindaja nimi</th>
-        <th>Teenindaja number</th>
-
-    </tr>
-    <?php
-    echo "<h2>Teenindajad:</h2>";
-    foreach ($xml->teenindaja as $teenindaja) {
-        echo "<tr>";
-        echo "<td>" . $teenindaja->nimi . "</td>";
-        echo "<td>" . $teenindaja->tunnus . "</td>";
-        echo "</tr>";
-    }
-    ?>
-</table>
-
-<table border="1">
-    <tr>
-        <th>Id</th>
-        <th>Teenindaja</th>
-        <th>Tellimusestaatus</th>
-
-    </tr>
-    <?php
-    echo "<h2>Teenindajad:</h2>";
     foreach ($xml->tellimus as $tellimus) {
         echo "<tr>";
-        echo "<td>" . $tellimus->id . "</td>";
-        echo "<td>" . $tellimus->teenindaja . "</td>";
+        echo "<td>" . $tellimus->tellimusId . "</td>";
+        echo "<td>" . $tellimus->teenindaja->nimi . "</td>";
+        echo "<td>" . $tellimus->teenindaja->tunnus . "</td>";
+        echo "<td>" . $tellimus->menu->toit . "</td>";
+        echo "<td>" . $tellimus->menu->jook . "</td>";
+        echo "<td>" . $tellimus->laud->number . "</td>";
+        echo "<td>" . $tellimus->laud->mahutavus . "</td>";
+        echo "<td>" . $tellimus->laud->asukoht . "</td>";
+        echo "<td>" . $tellimus->laud->seisukord . "</td>";
         echo "<td>" . $tellimus->tellimusestaatus . "</td>";
         echo "</tr>";
     }
     ?>
 </table>
 
+<!--
+    Valime teenindaja ja kuvame temaga seotud andmed funktsioonist
+-->
+<h2>Vali Teenindaja:</h2>
+<form method="post">
+    <select name="teenindaja" onchange="this.form.submit()">
+        <option value="">Vali teenindaja</option>
+        <?php foreach ($teenindajad as $nimi): ?>
+            <option value="<?= htmlspecialchars($nimi) ?>" <?= $selectedTeenindaja == $nimi ? 'selected' : '' ?>>
+                <?= htmlspecialchars($nimi) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</form>
+
+<?php if ($selectedTeenindaja): ?>
+    <h2>Funktsioon 1: Kõik tellimused, kes vormistas: <?= htmlspecialchars($selectedTeenindaja) ?></h2>
+    <table border="1">
+        <tr>
+            <th>Tellimus ID</th>
+            <th>Toit</th>
+            <th>Jook</th>
+            <th>Laua Number</th>
+            <th>Laua Mahutavus</th>
+            <th>Laua Asukoht</th>
+            <th>Laua Seisukord</th>
+            <th>Tellimuse Seisund</th>
+        </tr>
+        <?php
+        foreach ($xml->tellimus as $tellimus) {
+            if ((string)$tellimus->teenindaja->nimi === $selectedTeenindaja) {
+                echo "<tr>";
+                echo "<td>" . ($tellimus->tellimusId) . "</td>";
+                echo "<td>" . ($tellimus->menu->toit) . "</td>";
+                echo "<td>" . ($tellimus->menu->jook) . "</td>";
+                echo "<td>" . ($tellimus->laud->number) . "</td>";
+                echo "<td>" . ($tellimus->laud->mahutavus) . "</td>";
+                echo "<td>" . ($tellimus->laud->asukoht) . "</td>";
+                echo "<td>" . ($tellimus->laud->seisukord) . "</td>";
+                echo "<td>" . ($tellimus->tellimusestaatus) . "</td>";
+                echo "</tr>";
+            }
+        }
+        ?>
+    </table>
+<?php endif; ?>
+
+<h2>Funktsioon 2: Värvime valmis tellimused roheliseks, mitte valmis punaseks</h2>
 <table border="1">
     <tr>
-        <th>Nimi</th>
-        <th>Hind</th>
-        <th>Kategooria</th>
-        <th>Hindade kategooria</th>
+        <th>Tellimus ID</th>
+        <th>Toit</th>
+        <th>Jook</th>
+        <th>Laua Number</th>
+        <th>Laua Mahutavus</th>
+        <th>Laua Asukoht</th>
+        <th>Laua Seisukord</th>
+        <th>Tellimuse Seisund</th>
     </tr>
+
+    <!--
+    Tsükli läbi vätame väli ja kontrollime väärtuse ja anname pos. tulemusele roheline/ neg. tulemusele punane
+    TrColor andme tagastamine kumb oli väär/õige värviga
+    -->
     <?php
-    echo "<h2>Funktsioon 1: Lisa veel üks rida, kus näeme hinna kategooria ja mõistlik värv</h2>";
-    foreach ($xml->menu->toit as $toit) {
-        echo "<tr>";
-        echo "<td>" . htmlspecialchars($toit->nimi) . "</td>";
-        echo "<td>" . htmlspecialchars($toit->hind) . "</td>";
-        echo "<td>" . htmlspecialchars($toit->kategooria) . "</td>";
-
-        $price = (float) $toit->hind;
-        if ($price <= 6) {
-            echo "<td style='background-color: green; color: white;'>Odav</td>";
-        } elseif ($price <= 10) {
-            echo "<td style='background-color: yellow;'>Kallis</td>";
-        } else {
-            echo "<td style='background-color: red; color: white;'>Väga kallis</td>";
-        }
-
-        echo "</tr>";
+    foreach ($xml->tellimus as $tellimus) {
+        $trColor = ($tellimus->tellimusestaatus == 'Valmis') ? 'MediumSeaGreen' : 'Tomato';
+                echo "<tr style='background-color: $trColor;'>";
+                echo "<td>" . ($tellimus->tellimusId) . "</td>";
+                echo "<td>" . ($tellimus->menu->toit) . "</td>";
+                echo "<td>" . ($tellimus->menu->jook) . "</td>";
+                echo "<td>" . ($tellimus->laud->number) . "</td>";
+                echo "<td>" . ($tellimus->laud->mahutavus) . "</td>";
+                echo "<td>" . ($tellimus->laud->asukoht) . "</td>";
+                echo "<td>" . ($tellimus->laud->seisukord) . "</td>";
+                echo "<td>" . ($tellimus->tellimusestaatus) . "</td>";
+                echo "</tr>";
     }
     ?>
 </table>
 
-<h2>Funktsioon 2: Toidud kategooria järgi</h2>
-<form method="GET">
-    <label for="kategooria">Vali kategooria:</label>
-    <select name="kategooria" id="kategooria">
-        <option value="">Vali kategooria</option>
-        <?php foreach ($categories as $kategooria): ?>
-            <option value="<?= htmlspecialchars($kategooria) ?>" <?= $kategooria === $selected_kategooria ? 'selected' : '' ?>>
-                <?= htmlspecialchars($kategooria) ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-    <input type="submit" value="Filtreeri">
-</form>
+<h2>Funktsioon 3: Rida, mis annab teada, kas on väljas või sees laua asukohast</h2>
 <table border="1">
     <tr>
-        <th>Nimi</th>
-        <th>Hind</th>
-        <th>Kategooria</th>
+        <th>Tellimus ID</th>
+        <th>Toit</th>
+        <th>Jook</th>
+        <th>Laua Number</th>
+        <th>Laua Mahutavus</th>
+        <th>Laua Asukoht</th>
+        <th>Laua Seisukord</th>
+        <th>Tellimuse Seisund</th>
+        <th>Väljas/Sees</th>
     </tr>
-    <h2>Toidud (kategooria: <?= htmlspecialchars($selected_kategooria) ?>):</h2>
-    <?php foreach ($xml->menu->toit as $toit): ?>
-        <?php if ($selected_kategooria === '' || $toit->kategooria == $selected_kategooria): ?>
-            <tr>
-                <td><?= htmlspecialchars($toit->nimi) ?></td>
-                <td><?= htmlspecialchars($toit->hind) ?></td>
-                <td><?= htmlspecialchars($toit->kategooria) ?></td>
-            </tr>
-        <?php endif; ?>
-    <?php endforeach; ?>
-</table>
 
-<h2>Funktsioon 3: Kui koht on A siis kirjutame, et see on sees ja kui on B siis Väljas</h2>
-<table border="1">
-    <tr>
-        <th>Laua number</th>
-        <th>Mahutavus</th>
-        <th>Koht</th>
-        <th>Seisukord</th>
-        <th>Sees/Väljas</th>
-    </tr>
+    <!--
+    Tsükli läbi vätame laua asukoht, kus A on Sees, B on väljas.
+    Lisanud veel üks rida asukoha täpsustamiseks
+    -->
     <?php
-    foreach ($xml->laud as $laud) {
-        echo "<tr>";
-        echo "<td>" . htmlspecialchars($laud->number) . "</td>";
-        echo "<td>" . htmlspecialchars($laud->mahutavus) . "</td>";
-        echo "<td>" . htmlspecialchars($laud->asukoht) . "</td>";
-        echo "<td>" . htmlspecialchars($laud->seisukord) . "</td>";
+    foreach ($xml->tellimus as $tellimus) {
+        $VA_SE = ($tellimus->laud->asukoht == 'A') ? 'Sees' : 'Väljas';
 
-        $sees_valjas = ($laud->asukoht == 'A') ? 'Sees' : 'Väljas';
-        echo "<td>" . htmlspecialchars($sees_valjas) . "</td>";
+        echo "<tr>";
+        echo "<td>" . ($tellimus->tellimusId) . "</td>";
+        echo "<td>" . ($tellimus->menu->toit) . "</td>";
+        echo "<td>" . ($tellimus->menu->jook) . "</td>";
+        echo "<td>" . ($tellimus->laud->number) . "</td>";
+        echo "<td>" . ($tellimus->laud->mahutavus) . "</td>";
+        echo "<td>" . ($tellimus->laud->asukoht) . "</td>";
+        echo "<td>" . ($tellimus->laud->seisukord) . "</td>";
+        echo "<td>" . ($tellimus->tellimusestaatus) . "</td>";
+        echo "<td>" . ($VA_SE) . "</td>";
         echo "</tr>";
+
     }
     ?>
 </table>

@@ -3,54 +3,37 @@
 	<xs:element name="restoran">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="menu">
+				<xs:element maxOccurs="unbounded" name="tellimus">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element maxOccurs="unbounded" name="toit">
+							<xs:element name="teenindaja">
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="nimi" type="xs:string" />
-										<xs:element name="hind" type="xs:decimal" />
-										<xs:element name="kategooria" type="xs:string" />
+										<xs:element name="tunnus" type="xs:unsignedByte" />
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element maxOccurs="unbounded" name="jook">
+							<xs:element name="tellimusId" type="xs:unsignedByte" />
+							<xs:element name="menu">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="nimi" type="xs:string" />
-										<xs:element name="hind" type="xs:decimal" />
-										<xs:element name="kategooria" type="xs:string" />
+										<xs:element name="toit" type="xs:string" />
+										<xs:element name="jook" type="xs:string" />
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element maxOccurs="unbounded" name="laud">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="number" type="xs:unsignedByte" />
-							<xs:element name="mahutavus" type="xs:unsignedByte" />
-							<xs:element name="asukoht" type="xs:string" />
-							<xs:element name="seisukord" type="xs:string" />
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element maxOccurs="unbounded" name="teenindaja">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="nimi" type="xs:string" />
-							<xs:element name="tunnus" type="xs:unsignedByte" />
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="tellimus">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="id" />
-							<xs:element name="teenindaja" />
-							<xs:element name="tellimusestaatus" />
+							<xs:element name="laud">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="number" type="xs:unsignedByte" />
+										<xs:element name="mahutavus" type="xs:unsignedByte" />
+										<xs:element name="asukoht" type="xs:string" />
+										<xs:element name="seisukord" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="tellimusestaatus" type="xs:string" />
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
