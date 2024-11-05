@@ -1,78 +1,132 @@
 {
-  "restoran": {
-    "tellimus": [
-      {
-        "teenindaja": {
-          "nimi": "Maria",
-          "tunnus": "101"
-        },
-        "tellimusId": "1",
-        "menu": {
-          "toit": "Gruusia juust",
-          "jook": "Coca cola"
-        },
-        "laud": {
-          "number": "1",
-          "mahutavus": "4",
-          "asukoht": "A",
-          "seisukord": "Broneeritud"
-        },
-        "tellimusestaatus": "Ei ole valmis"
-      },
-      {
-        "teenindaja": {
-          "nimi": "Maria",
-          "tunnus": "101"
-        },
-        "tellimusId": "2",
-        "menu": {
-          "toit": "Basturma",
-          "jook": "Borjomi"
-        },
-        "laud": {
-          "number": "2",
-          "mahutavus": "4",
-          "asukoht": "B",
-          "seisukord": "Broneeritud"
-        },
-        "tellimusestaatus": "Ei ole valmis"
-      },
-      {
-        "teenindaja": {
-          "nimi": "Juhan",
-          "tunnus": "102"
-        },
-        "tellimusId": "3",
-        "menu": {
-          "toit": "Kolhuri",
-          "jook": "Borjomi"
-        },
-        "laud": {
-          "number": "3",
-          "mahutavus": "4",
-          "asukoht": "A",
-          "seisukord": "Broneeritud"
-        },
-        "tellimusestaatus": "Valmis"
-      },
-      {
-        "teenindaja": {
-          "nimi": "Juhan",
-          "tunnus": "102"
-        },
-        "tellimusId": "4",
-        "menu": {
-          "toit": "Sealihašašlõkk",
-          "jook": "Borjomi"
-        },
-        "laud": {
-          "number": "4",
-          "mahutavus": "4",
-          "asukoht": "B",
-          "seisukord": "Broneeritud"
-        },
-        "tellimusestaatus": "Valmis"
-      }
-    ]
-  }
+    "restoran": {
+        "tellimus": [
+            {
+                "teenindaja": {
+                    "nimi": "Maria",
+                    "tunnus": "101"
+                },
+                "tellimusId": "1",
+                "menu": {
+                    "toit": "Gruusia juust",
+                    "jook": "Coca cola"
+                },
+                "laud": {
+                    "number": "1",
+                    "mahutavus": "4",
+                    "asukoht": "A",
+                    "seisukord": "Broneeritud"
+                },
+                "tellimusestaatus": "Ei ole valmis"
+            },
+            {
+                "teenindaja": {
+                    "nimi": "Maria",
+                    "tunnus": "101"
+                },
+                "tellimusId": "2",
+                "menu": {
+                    "toit": "Basturma",
+                    "jook": "Borjomi"
+                },
+                "laud": {
+                    "number": "2",
+                    "mahutavus": "4",
+                    "asukoht": "B",
+                    "seisukord": "Broneeritud"
+                },
+                "tellimusestaatus": "Ei ole valmis"
+            },
+            {
+                "teenindaja": {
+                    "nimi": "Juhan",
+                    "tunnus": "102"
+                },
+                "tellimusId": "3",
+                "menu": {
+                    "toit": "Kolhuri",
+                    "jook": "Borjomi"
+                },
+                "laud": {
+                    "number": "3",
+                    "mahutavus": "4",
+                    "asukoht": "A",
+                    "seisukord": "Broneeritud"
+                },
+                "tellimusestaatus": "Valmis"
+            },
+            {
+                "teenindaja": {
+                    "nimi": "Juhan",
+                    "tunnus": "102"
+                },
+                "tellimusId": "4",
+                "menu": {
+                    "toit": "Sealiha\u0161a\u0161l\u00f5kk",
+                    "jook": "Borjomi"
+                },
+                "laud": {
+                    "number": "4",
+                    "mahutavus": "4",
+                    "asukoht": "B",
+                    "seisukord": "Broneeritud"
+                },
+                "tellimusestaatus": "Valmis"
+            },
+            {
+                "tellimusId": "5",
+                "teenindaja": {
+                    "nimi": "Maria",
+                    "tunnus": "101"
+                },
+                "menu": {
+                    "toit": "Kolhuri",
+                    "jook": "Coca cola"
+                },
+                "laud": {
+                    "number": "5",
+                    "mahutavus": "4",
+                    "asukoht": "A",
+                    "seisukord": "Broneeritud"
+                },
+                "tellimusestaatus": "Ei ole valmis"
+            },
+            {
+                "tellimusId": "6",
+                "teenindaja": {
+                    "nimi": "Juhan",
+                    "tunnus": "102"
+                },
+                "menu": {
+                    "toit": "Sealiha\u0161a\u0161l\u00f5kk",
+                    "jook": "Fanta"
+                },
+                "laud": {
+                    "number": "6",
+                    "mahutavus": "4",
+                    "asukoht": "B",
+                    "seisukord": "Broneeritud"
+                },
+                "tellimusestaatus": "Ei ole valmis"
+            },
+            {
+                "tellimusId": "7",
+                "teenindaja": {
+                    "nimi": "Maria",
+                    "tunnus": "101"
+                },
+                "menu": {
+                    "toit": "Kolhuri",
+                    "jook": "Fanta"
+                },
+                "laud": {
+                    "number": "7",
+                    "mahutavus": "4",
+                    "asukoht": "A",
+                    "seisukord": "Broneeritud"
+                },
+                "tellimusestaatus": "Ei ole valmis"
+            }
+        ]
+    }
 }

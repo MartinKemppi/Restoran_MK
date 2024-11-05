@@ -22,10 +22,11 @@ $selectedTeenindaja = isset($_POST['teenindaja']) ? $_POST['teenindaja'] : '';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Restoran</title>
+    <link rel="stylesheet" href="a_xml_style.css">
 </head>
 <body>
 <h1>Restoran</h1>
-<a href="andmed_json.php">JSON vorm</a>
+<a href="andmed_json.php">JSON kuju</a>
 
 <h2>Tellimuste tabel</h2>
 <table border="1">
@@ -38,7 +39,7 @@ $selectedTeenindaja = isset($_POST['teenindaja']) ? $_POST['teenindaja'] : '';
         <th>Laua Number</th>
         <th>Laua Mahutavus</th>
         <th>Laua Asukoht</th>
-        <th>Laua Seisukord</th>
+        <th>Laua Seis</th>
         <th>Tellimuse Seisund</th>
     </tr>
     <?php
@@ -84,7 +85,7 @@ $selectedTeenindaja = isset($_POST['teenindaja']) ? $_POST['teenindaja'] : '';
             <th>Laua Number</th>
             <th>Laua Mahutavus</th>
             <th>Laua Asukoht</th>
-            <th>Laua Seisukord</th>
+            <th>Laua Seis</th>
             <th>Tellimuse Seisund</th>
         </tr>
         <?php
@@ -115,7 +116,7 @@ $selectedTeenindaja = isset($_POST['teenindaja']) ? $_POST['teenindaja'] : '';
         <th>Laua Number</th>
         <th>Laua Mahutavus</th>
         <th>Laua Asukoht</th>
-        <th>Laua Seisukord</th>
+        <th>Laua Seis</th>
         <th>Tellimuse Seisund</th>
     </tr>
 
@@ -126,16 +127,16 @@ $selectedTeenindaja = isset($_POST['teenindaja']) ? $_POST['teenindaja'] : '';
     <?php
     foreach ($xml->tellimus as $tellimus) {
         $trColor = ($tellimus->tellimusestaatus == 'Valmis') ? 'MediumSeaGreen' : 'Tomato';
-                echo "<tr style='background-color: $trColor;'>";
-                echo "<td>" . ($tellimus->tellimusId) . "</td>";
-                echo "<td>" . ($tellimus->menu->toit) . "</td>";
-                echo "<td>" . ($tellimus->menu->jook) . "</td>";
-                echo "<td>" . ($tellimus->laud->number) . "</td>";
-                echo "<td>" . ($tellimus->laud->mahutavus) . "</td>";
-                echo "<td>" . ($tellimus->laud->asukoht) . "</td>";
-                echo "<td>" . ($tellimus->laud->seisukord) . "</td>";
-                echo "<td>" . ($tellimus->tellimusestaatus) . "</td>";
-                echo "</tr>";
+        echo "<tr style='background-color: $trColor;'>";
+        echo "<td>" . ($tellimus->tellimusId) . "</td>";
+        echo "<td>" . ($tellimus->menu->toit) . "</td>";
+        echo "<td>" . ($tellimus->menu->jook) . "</td>";
+        echo "<td>" . ($tellimus->laud->number) . "</td>";
+        echo "<td>" . ($tellimus->laud->mahutavus) . "</td>";
+        echo "<td>" . ($tellimus->laud->asukoht) . "</td>";
+        echo "<td>" . ($tellimus->laud->seisukord) . "</td>";
+        echo "<td>" . ($tellimus->tellimusestaatus) . "</td>";
+        echo "</tr>";
     }
     ?>
 </table>
@@ -149,7 +150,7 @@ $selectedTeenindaja = isset($_POST['teenindaja']) ? $_POST['teenindaja'] : '';
         <th>Laua Number</th>
         <th>Laua Mahutavus</th>
         <th>Laua Asukoht</th>
-        <th>Laua Seisukord</th>
+        <th>Laua Seis</th>
         <th>Tellimuse Seisund</th>
         <th>Väljas/Sees</th>
     </tr>
